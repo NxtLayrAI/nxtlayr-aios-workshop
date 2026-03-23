@@ -1229,24 +1229,24 @@
       <div class="form-row">
         <div class="form-field">
           <label class="form-label">First name</label>
-          <input type="text" placeholder="Alex" required />
+          <input type="text" name="first_name" placeholder="Alex" required />
         </div>
         <div class="form-field">
           <label class="form-label">Last name</label>
-          <input type="text" placeholder="Johnson" required />
+          <input type="text" name="last_name" placeholder="Johnson" required />
         </div>
       </div>
       <div class="form-field">
         <label class="form-label">Email</label>
-        <input type="email" placeholder="alex@yourbrand.com" required />
+        <input type="email" name="email" placeholder="alex@yourbrand.com" required />
       </div>
       <div class="form-field">
         <label class="form-label">Business name</label>
-        <input type="text" placeholder="Your Brand Co." required />
+        <input type="text" name="business_name" placeholder="Your Brand Co." required />
       </div>
       <div class="form-field">
         <label class="form-label">Annual revenue (approximate)</label>
-        <select required>
+        <select name="annual_revenue" required>
           <option value="" disabled selected>Select a range</option>
           <option>Under $500K/year</option>
           <option>$500K – $1M/year</option>
@@ -1257,7 +1257,7 @@
       </div>
       <div class="form-field">
         <label class="form-label">What's the one thing you wish your data could tell you? <span style="font-weight:400; color:#4a4946;">(optional)</span></label>
-        <textarea placeholder="e.g. Which products are actually profitable once you factor in ad spend and returns..."></textarea>
+        <textarea name="data_question" placeholder="e.g. Which products are actually profitable once you factor in ad spend and returns..."></textarea>
       </div>
       <button type="submit" class="form-submit">Join the Waitlist →</button>
       <p class="form-fine">No payment required now. You'll hear from us when registration opens.</p>
@@ -1279,9 +1279,30 @@
 <script>
   function handleSubmit(e) {
     e.preventDefault();
-    document.getElementById('waitlist-form').style.display = 'none';
-    document.getElementById('thankyou').style.display = 'block';
-    window.scrollTo({ top: document.getElementById('waitlist').offsetTop - 60, behavior: 'smooth' });
+    const form = document.getElementById('waitlist-form');
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xwvrdnyd', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(res => {
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('thankyou').style.display = 'block';
+        window.scrollTo({ top: document.getElementById('waitlist').offsetTop - 60, behavior: 'smooth' });
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    });
   }
 </script>
 
