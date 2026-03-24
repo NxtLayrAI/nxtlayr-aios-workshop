@@ -8,6 +8,8 @@
   <meta property="og:title" content="eCommerce Command Centre — Sydney Workshop | NxtLayr AI" />
   <meta property="og:description" content="What if you could talk to your business in plain English? Connect your Shopify, Meta, Klaviyo, and GA4 data to AI in one afternoon." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://workshop.nxtlayrai.com" />
+  <link rel="canonical" href="https://workshop.nxtlayrai.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- Preload critical font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -722,7 +724,7 @@
       letter-spacing: -1.5px; line-height: 1;
     }
 
-    .price-note { font-size: 13px; color: var(--faint); margin-bottom: 28px; }
+    .price-note { font-size: 13px; color: var(--cream); margin-bottom: 28px; }
 
     .pricing-includes {
       list-style: none;
@@ -733,7 +735,7 @@
     }
 
     .pricing-includes li {
-      font-size: 14px; color: #8a8880;
+      font-size: 14px; color: var(--cream);
       display: flex; align-items: flex-start; gap: 10px;
       line-height: 1.5;
     }
@@ -859,6 +861,90 @@
 
     .form-submit:hover { opacity: 0.9; }
     .form-fine { font-size: 13px; color: #4a4946; text-align: center; margin-top: 4px; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--cream); padding: 80px 24px; }
+
+    #faq h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      margin-bottom: 48px;
+    }
+
+    #faq h2 span { color: var(--orange); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(14,14,13,0.08);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid rgba(14,14,13,0.08);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-q {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(14px, 2.2vw, 16px);
+      color: var(--dark);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--orange2);
+      border: 1px solid rgba(217,119,87,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-icon svg {
+      width: 10px;
+      height: 10px;
+      fill: var(--orange);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.open .faq-icon { background: var(--orange); }
+    .faq-item.open .faq-icon svg { fill: #fff; transform: rotate(45deg); }
+
+    .faq-body {
+      display: none;
+      padding: 0 0 22px;
+    }
+
+    .faq-item.open .faq-body { display: block; }
+
+    .faq-a {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    .faq-a strong { color: var(--dark); font-weight: 600; }
 
     /* ── FOOTER ── */
     footer { background: var(--dark); padding: 32px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); }
@@ -1157,12 +1243,12 @@
 <section id="pricing">
   <div class="inner-sm">
     <h2>Founding member <span>pricing.</span></h2>
-    <p class="pricing-sub">First cohort only. Rises to A$2,497 for future sessions.</p>
+    <p class="pricing-sub">Founding member price — first cohort only. Rises to A$1,997 for future sessions.</p>
     <div class="pricing-card">
       <div class="pricing-badge">Sydney — Cohort 1 · Founding Members</div>
       <div class="pricing-price">
-        <div class="price-old">A$2,497</div>
-        <div class="price-new">A$1,997</div>
+        <div class="price-old">A$1,997</div>
+        <div class="price-new">A$995</div>
       </div>
       <div class="price-note">per person · one-time · own it forever</div>
       <ul class="pricing-includes">
@@ -1172,6 +1258,7 @@
         <li>Shopify, Meta Ads, Klaviyo + GA4 connected live during the session</li>
         <li>Starter prompt library tailored to eCommerce</li>
         <li>2 weeks post-workshop support via Slack or email</li>
+        <li><span class="highlight">Team member documentation</span> — share a scoped workspace with your team so anyone can use the system</li>
         <li>Ongoing system cost: <span class="highlight">under A$30/month</span> (Claude Pro only)</li>
       </ul>
       <a href="#waitlist" class="pricing-cta">Join the Waitlist — 8 Spots</a>
@@ -1216,6 +1303,86 @@
     <p>I'm <strong>Chris Gulotta</strong>, founder of NxtLayr AI. I spent a number of years helping businesses learn how to adopt and implement technology to improve their operations and generate more revenue. This AI Operating System is not just another tool — it will be a living, breathing and self-evolving member of your team for years to come.</p>
     <p>I built this exact system for my own business first. Every morning I open one workspace, ask a question, and get a briefing that pulls from every platform I run. No dashboards. No spreadsheets. Just answers.</p>
     <p>I've kept this small deliberately. <strong>8 people maximum.</strong> Everyone leaves with a working system built on their own data — not a workbook full of notes.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="inner-sm">
+    <h2>Questions we <span>get asked.</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">Do I need to be technical to do this?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">No. If you can copy and paste, you can do this. The workshop is designed for founders, not developers. We walk through every step — installing the software, generating API keys, building your Brain — together in the room. The most technical thing you'll do is copy a key from one screen to another.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">Is my business data safe? Who can see it?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Your files — your Business Brain, context documents, and all your business data — live on your own computer. Nothing is uploaded to Anthropic's servers or stored in the cloud. <strong>Anthropic does not train on conversations from paid accounts.</strong> Your API keys are stored locally in an .env file and never appear in chat. It's architecturally more private than most SaaS tools you already use.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What does it cost to run after the workshop?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Claude Pro is <strong>~A$30/month</strong>. That's it. No enterprise contracts, no BI subscriptions, no per-seat SaaS fees. You own the system outright — it's markdown files and an AI subscription. Most founders recoup that in the first week of better ad decisions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What platforms does it connect to?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">During the workshop we connect <strong>Shopify, Meta Ads, Klaviyo, and Google Analytics (GA4)</strong>. These cover the core data picture for most eCommerce brands. Google Ads, Stripe, and custom Google Sheets connections can be added afterwards — we include a guide.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">Will it work for my team, not just me?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Yes — and this is one of the most powerful parts of the system. After the workshop, you can run <strong>/add-team-member</strong> to generate a scoped workspace for anyone on your team. Your marketing manager gets an AI that knows the business and their role. Your ops manager gets a different view. Each person's workspace is built from your Business Brain, so the context is consistent — but the commands and data access are tailored to what they actually need.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What if I already use a BI tool or dashboard?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">This isn't a dashboard replacement — it's a layer on top of your data that tells you what it means. Most founders who attend still keep their analytics tools. What changes is they stop spending 45 minutes every morning interpreting charts and start asking questions and getting answers in plain English. The two coexist fine.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What happens after the 8 spots are filled?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">We'll run future cohorts — but at A$1,997. The founding member price of A$995 is for the first group only. If you're on the waitlist and registration fills before we reach you, you'll carry your priority to the next cohort at the same founding price.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1303,6 +1470,13 @@
       btn.textContent = 'Something went wrong — try again';
       btn.disabled = false;
     });
+  }
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
   }
 </script>
 
