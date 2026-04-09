@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eCommerce Command Centre Workshop | NxtLayr AI</title>
-  <meta name="description" content="Connect Shopify, Meta Ads, Klaviyo and GA4 to one AI brain in a single afternoon. A$995 per person — in-person Sydney or virtual. 8 founding spots." />
-  <meta property="og:title" content="eCommerce Command Centre Workshop | NxtLayr AI" />
-  <meta property="og:description" content="Connect Shopify, Meta Ads, Klaviyo and GA4 to one AI brain in a single afternoon. A$995 per person — in-person or virtual." />
+  <meta name="description" content="Connect Shopify, Klaviyo, Meta Ads and Google Ads to one AI brain. Thursday April 23, Sydney. A$995 per person — 10 founding spots." />
+  <meta property="og:title" content="eCommerce Command Centre Workshop — April 23, Sydney | NxtLayr AI" />
+  <meta property="og:description" content="Connect Shopify, Klaviyo, Meta Ads and Google Ads to one AI brain. Thursday April 23, Sydney. A$995 per person." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://workshop.nxtlayrai.com" />
   <link rel="canonical" href="https://workshop.nxtlayrai.com" />
@@ -106,9 +106,9 @@
     }
 
     /* ── SECTIONS ── */
-    .inner     { max-width: 720px; margin: 0 auto; }
-    .inner-sm  { max-width: 560px; margin: 0 auto; }
-    .inner-lg  { max-width: 860px; margin: 0 auto; }
+    .inner     { max-width: 880px; margin: 0 auto; }
+    .inner-sm  { max-width: 720px; margin: 0 auto; }
+    .inner-lg  { max-width: 1020px; margin: 0 auto; }
 
     /* ── HERO ── */
     #hero {
@@ -193,6 +193,69 @@
       text-decoration: none;
     }
 
+
+    /* ── COUNTDOWN ── */
+    .cd-unit {
+      text-align: center;
+    }
+    .cd-num {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .cd-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #5a5850;
+    }
+
+    /* ── SPOTS REMAINING ── */
+    .spots-bar {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .spots-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .spots-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--orange);
+      transition: all 0.3s;
+      box-shadow: 0 0 6px rgba(217,119,87,0.5);
+      animation: dot-pulse 2s ease-in-out infinite;
+    }
+    .spots-dot.taken {
+      background: #333;
+      opacity: 0.4;
+      box-shadow: none;
+      animation: none;
+    }
+    @keyframes dot-pulse {
+      0%, 100% { box-shadow: 0 0 6px rgba(217,119,87,0.4); }
+      50% { box-shadow: 0 0 14px rgba(217,119,87,0.8); }
+    }
+    .spots-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--cream);
+    }
+    .spots-text span {
+      color: var(--orange);
+    }
 
     /* ── CHAOS GRAPHIC ── */
     #chaos {
@@ -964,26 +1027,34 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-brand"><img src="logo.png" alt="NxtLayr AI" style="height:44px;width:auto;display:block;" /></a>
-  <div class="nav-pill">Sydney Workshop · In-Person or Virtual</div>
-  <a href="#pricing" class="nav-cta">Book Your Session</a>
+  <div class="nav-pill">Thursday April 23 · Sydney · 10 Spots</div>
+  <a href="#pricing" class="nav-cta">Reserve Your Spot</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="inner" style="position:relative; z-index:1;">
-    <span class="hero-eyebrow">eComm Founders · In-Person or Virtual</span>
+    <span class="hero-eyebrow">Thursday April 23 · Sydney · 10 Spots Only</span>
 
     <h1>What if you could<br><span class="accent">talk to your business</span><br>in plain English?</h1>
 
     <p class="hero-question">
       <span>"Why did revenue drop last week?"</span><br>
       <span>"Should I scale ads or fix email first?"</span><br>
-      <span>"Which products are actually making me money?"</span>
+      <span>"How will rising shipping costs impact our margins this quarter?"</span>
     </p>
 
-    <p class="hero-sub">An AI operating system that reads your live Shopify, Meta Ads, Klaviyo, and GA4 data — and tells you what to do about it. Built on <strong style="color:var(--cream); font-weight:600;">Claude Code</strong> by Anthropic. We build it together in one afternoon. You own it forever.</p>
+    <p class="hero-sub">An AI operating system that reads your live Shopify, Klaviyo, Meta Ads, and Google Ads data — and tells you what to do about it. We build it together in one afternoon. You own it forever.</p>
 
-    <a href="#pricing" class="hero-cta">Book Your Session — A$995</a>
+    <a href="#pricing" class="hero-cta">Reserve Your Spot — April 23</a>
+
+    <!-- COUNTDOWN -->
+    <div id="hero-countdown" style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">days</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">hours</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">mins</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">secs</span></div>
+    </div>
 
     <!-- VSL VIDEO -->
     <div id="vsl-video" style="margin-top:48px; border-radius:16px; overflow:hidden; background:#111110; border:1px solid rgba(255,255,255,0.07); position:relative; padding-bottom:56.25%; height:0;">
@@ -998,7 +1069,7 @@
         </div>
         <div>
           <div class="chat-header-name">Command Centre AI</div>
-          <div class="chat-header-status">Connected to Shopify · Meta · Klaviyo · GA4</div>
+          <div class="chat-header-status">Connected to Shopify · Klaviyo · Meta Ads · Google Ads</div>
         </div>
       </div>
 
@@ -1034,81 +1105,6 @@
   </div>
 </section>
 
-<!-- CHAOS GRAPHIC -->
-<section id="chaos">
-  <div class="chaos-wrap">
-    <p class="chaos-label">Your data right now</p>
-    <div class="chaos-svg-wrap">
-      <!-- Platform mesh graphic — text labels only, no trademarked logos -->
-      <svg viewBox="0 0 680 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Data platforms tangled diagram">
-        <defs>
-          <filter id="glow-orange">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glow-blue">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-
-        <!-- Tangled connecting lines -->
-        <path d="M100,80 C200,160 300,40 430,130" stroke="#d97757" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="4 6"/>
-        <path d="M100,80 C180,200 420,200 580,150" stroke="#6a9bcc" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
-        <path d="M200,220 C280,100 360,180 430,130" stroke="#d97757" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
-        <path d="M200,220 C340,260 480,200 580,150" stroke="#5a9e6f" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
-        <path d="M340,50 C360,110 400,100 430,130" stroke="#6a9bcc" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="4 6"/>
-        <path d="M340,50 C460,60 530,90 580,150" stroke="#d97757" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
-        <path d="M100,80 C140,130 170,180 200,220" stroke="#5a9e6f" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
-        <path d="M340,50 C280,100 230,160 200,220" stroke="#6a9bcc" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="4 6"/>
-        <path d="M430,130 C500,170 540,160 580,150" stroke="#d97757" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 6"/>
-        <!-- Extra chaos lines -->
-        <path d="M100,80 C300,20 500,240 580,150" stroke="#6a9bcc" stroke-width="1" stroke-opacity="0.1" stroke-dasharray="3 8"/>
-        <path d="M200,220 C240,80 480,60 430,130" stroke="#d97757" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="3 8"/>
-
-        <!-- Node: Shopify -->
-        <circle cx="100" cy="80" r="28" fill="#1a1917" stroke="#5a9e6f" stroke-width="1.5" filter="url(#glow-blue)"/>
-        <text x="100" y="76" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="10" fill="#5a9e6f">Shopify</text>
-        <text x="100" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#4a4946">store data</text>
-
-        <!-- Node: Meta Ads -->
-        <circle cx="200" cy="220" r="28" fill="#1a1917" stroke="#6a9bcc" stroke-width="1.5" filter="url(#glow-blue)"/>
-        <text x="200" y="216" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="10" fill="#6a9bcc">Meta Ads</text>
-        <text x="200" y="229" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#4a4946">campaigns</text>
-
-        <!-- Node: GA4 -->
-        <circle cx="340" cy="50" r="26" fill="#1a1917" stroke="#d97757" stroke-width="1.5" filter="url(#glow-orange)"/>
-        <text x="340" y="46" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="10" fill="#d97757">GA4</text>
-        <text x="340" y="59" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#4a4946">traffic</text>
-
-        <!-- Node: Klaviyo -->
-        <circle cx="430" cy="130" r="30" fill="#1a1917" stroke="#d97757" stroke-width="1.5" filter="url(#glow-orange)"/>
-        <text x="430" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="10" fill="#d97757">Klaviyo</text>
-        <text x="430" y="139" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#4a4946">email / SMS</text>
-
-        <!-- Node: Google Ads -->
-        <circle cx="580" cy="150" r="28" fill="#1a1917" stroke="#6a9bcc" stroke-width="1.5"/>
-        <text x="580" y="146" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="10" fill="#6a9bcc">Google</text>
-        <text x="580" y="159" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#4a4946">ads / search</text>
-
-        <!-- "You" node in middle — overwhelmed -->
-        <circle cx="330" cy="165" r="22" fill="#111110" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-        <text x="330" y="161" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4a4946">you</text>
-        <text x="330" y="173" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4a4946">😵</text>
-        <line x1="330" y1="143" x2="330" y2="108" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="315" y1="158" x2="230" y2="210" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="345" y1="155" x2="402" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="322" y1="155" x2="120" y2="95" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="340" y1="143" x2="354" y2="72" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      </svg>
-    </div>
-
-    <div class="chaos-after">
-      <div class="chaos-arrow">↓</div>
-      <div class="chaos-after-text">After the workshop: <span>one AI that reads all of it</span></div>
-    </div>
-  </div>
-</section>
 
 <!-- AI ANGLE -->
 <section id="ai-angle">
@@ -1168,7 +1164,7 @@
         <div class="outcome-icon">⚡</div>
         <div class="outcome-text">
           <strong>A connected AI workspace</strong>
-          <span>Shopify, Meta Ads, Klaviyo, GA4 — all piped into one system that reads your live data and answers questions in plain English.</span>
+          <span>Shopify, Klaviyo, Meta Ads, Google Ads — all connected to one AI that reads your live data and answers questions in plain English.</span>
         </div>
       </div>
       <div class="outcome-item">
@@ -1213,7 +1209,7 @@
         <div class="step-content">
           <div class="step-meta">60 minutes</div>
           <div class="step-title">Why AI — and why this is different</div>
-          <div class="step-desc">The data problem, how AI reasoning works differently from a dashboard, and what you're about to build. You'll understand exactly what's happening before you touch a keyboard. Works the same in-person or via Zoom.</div>
+          <div class="step-desc">The data problem, how AI reasoning works differently from a dashboard, and what you're about to build. You'll understand exactly what's happening before you touch a keyboard.</div>
         </div>
       </div>
       <div class="step">
@@ -1229,7 +1225,7 @@
         <div class="step-content">
           <div class="step-meta">75 minutes</div>
           <div class="step-title">Connect your data</div>
-          <div class="step-desc">Step-by-step, we connect Shopify, Meta Ads, Klaviyo, and GA4 to your workspace. Non-technical. If you can copy-paste an API key, you can do this.</div>
+          <div class="step-desc">Step-by-step, we connect Shopify and Klaviyo via API live in the session. You leave with guides for Meta Ads, Google Ads, and Triple Whale too.</div>
         </div>
       </div>
       <div class="step">
@@ -1248,25 +1244,36 @@
 <section id="pricing">
   <div class="inner-sm">
     <h2>Founding member <span>pricing.</span></h2>
-    <p class="pricing-sub">First cohort only. Rises to A$1,997 for future sessions.</p>
+    <p class="pricing-sub">Thursday April 23, Sydney. First cohort — this price won't repeat.</p>
     <div class="pricing-card">
-      <div class="pricing-badge">Founding Members · 8 Spots Only</div>
+      <div class="pricing-badge">Thursday April 23 · Sydney · Founding Cohort</div>
       <div class="pricing-price">
         <div class="price-old">A$1,997</div>
         <div class="price-new">A$995</div>
       </div>
       <div class="price-note">per person · one-time · own it forever</div>
+
+      <!-- SPOTS REMAINING -->
+      <div class="spots-bar" id="spots-widget">
+        <div class="spots-dots" id="spots-dots"></div>
+        <div class="spots-text"><span id="spots-count">8</span> of 10 spots remaining</div>
+      </div>
+
       <ul class="pricing-includes">
-        <li><span class="highlight">Half-day hands-on session (4–5 hours) — in-person Sydney or virtual via Zoom</span></li>
+        <li><span class="highlight">Half-day hands-on session (4–5 hours) — in-person, Sydney CBD</span></li>
         <li>Full AI workspace setup — Brain, data connections, commands</li>
         <li><span class="highlight">Bespoke foundational documents built to your business</span></li>
-        <li>Shopify, Meta Ads, Klaviyo + GA4 connected live during the session</li>
+        <li>Shopify + Klaviyo connected via API — live during the session</li>
+        <li>Integration guides for Meta Ads, Google Ads + Triple Whale included</li>
         <li>Starter prompt library tailored to eCommerce</li>
         <li>2 weeks post-session support via Slack or email</li>
-        <li><span class="highlight">Team member documentation</span> — share a scoped workspace with your team so anyone can use the system</li>
+        <li><span class="highlight">Team member documentation</span></li>
         <li>Ongoing system cost: <span class="highlight">under A$30/month</span> (Claude Pro only)</li>
       </ul>
-      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" class="pricing-cta" id="buy-cta">Book Your Session — A$995 per person</a>
+      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" class="pricing-cta" id="buy-cta">Reserve Your Spot — A$995 per person</a>
+      <p style="text-align:center; margin-top:16px;">
+        <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Not sure yet? Book a quick call →</a>
+      </p>
       <p class="pricing-guarantee">Booking for multiple team members? Each person gets their own workspace built to their role. <a href="#contact" style="color:var(--orange); text-decoration:underline;">Get in touch</a> for group pricing.</p>
     </div>
   </div>
@@ -1307,7 +1314,7 @@
     <h2>Who's running this.</h2>
     <p>I'm <strong>Chris Gulotta</strong>, founder of NxtLayr AI. 15 years in sales and tech — from enterprise SaaS to building AI systems for Australian businesses. I now help founders find where AI actually fits in their operations and build the systems to make it work.</p>
     <p>I built this exact system for my own business first. Every morning I open one workspace, ask a question, and get a briefing that pulls from every platform I run. No dashboards. No spreadsheets. Just answers.</p>
-    <p>I've kept this small deliberately. <strong>8 people maximum.</strong> Everyone leaves with a working system built on their own data — not a slide deck full of theory.</p>
+    <p>I've kept this small deliberately. <strong>10 people maximum.</strong> Everyone leaves with a working system built on their own data — not a slide deck full of theory.</p>
   </div>
 </section>
 
@@ -1353,7 +1360,7 @@
           <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
         </button>
         <div class="faq-body">
-          <p class="faq-a">During the workshop we connect <strong>Shopify, Meta Ads, Klaviyo, and Google Analytics (GA4)</strong>. These cover the core data picture for most eCommerce brands. Google Ads, Stripe, and custom Google Sheets connections can be added afterwards — we include a guide.</p>
+          <p class="faq-a">During the workshop we connect <strong>Shopify and Klaviyo</strong> via API — your store data and email/SMS in one place. You also get step-by-step guides for connecting <strong>Meta Ads, Google Ads, and Triple Whale</strong> after the session. The framework works with any platform that has an API.</p>
         </div>
       </div>
 
@@ -1373,7 +1380,7 @@
           <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
         </button>
         <div class="faq-body">
-          <p class="faq-a">Both work. We run <strong>in-person sessions in Sydney</strong> and <strong>virtual sessions via Zoom</strong>. The experience is the same — we build your workspace together, step by step. Virtual sessions run 1-on-1 so you get full attention.</p>
+          <p class="faq-a">The April 23 session is <strong>in-person in Sydney</strong>. Can't make it? <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" style="color:var(--orange); text-decoration:underline;">Book a call</a> and we'll discuss virtual or future dates.</p>
         </div>
       </div>
 
@@ -1389,11 +1396,11 @@
 
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-          <span class="faq-q">What happens after the 8 founding spots are gone?</span>
+          <span class="faq-q">What happens after the 10 founding spots are gone?</span>
           <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
         </button>
         <div class="faq-body">
-          <p class="faq-a">Future cohorts run at <strong>A$1,997</strong>. The founding member price of A$995 is for the first 8 people only. Once they're gone, that price is gone. If you've submitted a question via the form, I'll let you know before spots sell out.</p>
+          <p class="faq-a">Future cohorts run at <strong>A$1,997</strong>. The April 23 founding cohort is A$995 for 10 people only. Once they're gone, that price is gone.</p>
         </div>
       </div>
 
@@ -1406,8 +1413,11 @@
   <div class="inner-sm">
     <div style="text-align:center; margin-bottom:48px;">
       <h2 style="margin-bottom:12px;">Ready to <span>build yours?</span></h2>
-      <p class="form-sub" style="margin-bottom:24px;">8 founding spots at A$995. In-person Sydney or virtual via Zoom.</p>
-      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" class="pricing-cta" style="display:inline-block; max-width:420px; width:100%;">Book Your Session — A$995 per person</a>
+      <p class="form-sub" style="margin-bottom:24px;">Thursday April 23, Sydney. 10 founding spots at A$995.</p>
+      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" class="pricing-cta" style="display:inline-block; max-width:420px; width:100%;">Reserve Your Spot — A$995 per person</a>
+      <p style="margin-top:14px;">
+        <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Not sure? Book a quick call first →</a>
+      </p>
     </div>
 
     <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:48px;">
@@ -1415,38 +1425,13 @@
       <p class="form-sub">Drop your details and I'll get back to you personally.</p>
 
       <form class="form" onsubmit="handleSubmit(event)" id="waitlist-form">
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label">First name</label>
-            <input type="text" name="first_name" placeholder="Alex" required />
-          </div>
-          <div class="form-field">
-            <label class="form-label">Last name</label>
-            <input type="text" name="last_name" placeholder="Johnson" required />
-          </div>
+        <div class="form-field">
+          <label class="form-label">Name</label>
+          <input type="text" name="full_name" placeholder="Alex Johnson" required />
         </div>
         <div class="form-field">
           <label class="form-label">Email</label>
           <input type="email" name="email" placeholder="alex@yourbrand.com" required />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Business name</label>
-          <input type="text" name="business_name" placeholder="Your Brand Co." required />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Annual revenue (approximate)</label>
-          <select name="annual_revenue" required>
-            <option value="" disabled selected>Select a range</option>
-            <option>Under $500K/year</option>
-            <option>$500K – $1M/year</option>
-            <option>$1M – $5M/year</option>
-            <option>$5M – $20M/year</option>
-            <option>$20M+/year</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label class="form-label">What's the one thing you wish your data could tell you? <span style="font-weight:400; color:#4a4946;">(optional)</span></label>
-          <textarea name="data_question" placeholder="e.g. Which products are actually profitable once you factor in ad spend and returns..."></textarea>
         </div>
         <button type="submit" class="form-submit">Send My Details →</button>
         <p class="form-fine">No obligation. I'll reply within 24 hours.</p>
@@ -1475,13 +1460,15 @@
     btn.disabled = true;
 
     const formData = new FormData(form);
+    const fullName = (formData.get('full_name') || '').toString().trim();
+    const nameParts = fullName.split(/\s+/);
     const payload = {
-      firstName: formData.get('first_name'),
-      lastName: formData.get('last_name'),
+      firstName: nameParts[0] || fullName,
+      lastName: nameParts.slice(1).join(' ') || '',
       email: formData.get('email'),
-      businessName: formData.get('business_name'),
-      revenue: formData.get('annual_revenue'),
-      wish: formData.get('data_question') || ''
+      businessName: '',
+      revenue: '',
+      wish: ''
     };
 
     fetch('https://nxtlayrai.com/api/workshop-waitlist', {
@@ -1511,6 +1498,64 @@
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   }
+
+  // ── COUNTDOWN TIMER ──
+  // Workshop: Thursday April 23, 2026 at 9:00 AM AEST (UTC+10)
+  const workshopDate = new Date('2026-04-23T09:00:00+10:00').getTime();
+
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = workshopDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '0';
+      document.getElementById('cd-hours').textContent = '0';
+      document.getElementById('cd-mins').textContent = '0';
+      document.getElementById('cd-secs').textContent = '0';
+      return;
+    }
+
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cd-days').textContent = days;
+    document.getElementById('cd-hours').textContent = hours;
+    document.getElementById('cd-mins').textContent = mins;
+    document.getElementById('cd-secs').textContent = secs;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ── SPOTS REMAINING ──
+  // Change this number as spots sell. 8 = all available, 0 = sold out.
+  const SPOTS_REMAINING = 8;
+  const TOTAL_SPOTS = 10;
+
+  function renderSpots() {
+    const dotsEl = document.getElementById('spots-dots');
+    const countEl = document.getElementById('spots-count');
+    if (!dotsEl || !countEl) return;
+
+    countEl.textContent = SPOTS_REMAINING;
+
+    let dots = '';
+    for (let i = 0; i < TOTAL_SPOTS; i++) {
+      const taken = i >= SPOTS_REMAINING ? ' taken' : '';
+      dots += '<div class="spots-dot' + taken + '"></div>';
+    }
+    dotsEl.innerHTML = dots;
+
+    // Update spots text
+    const textEl = dotsEl.parentElement.querySelector('.spots-text');
+    if (SPOTS_REMAINING === 0 && textEl) {
+      textEl.innerHTML = '<span style="color:#e05252;">Sold out</span> — join the waitlist for the next cohort';
+    }
+  }
+
+  renderSpots();
 </script>
 
 </body>
