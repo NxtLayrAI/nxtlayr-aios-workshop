@@ -210,6 +210,30 @@
       text-decoration: none;
     }
 
+    /* ── HERO PROOF PHOTOS ── */
+    .hero-proof-photos {
+      display: none;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    @media(min-width: 640px) { .hero-proof-photos { display: flex; } }
+
+    .hero-proof-frame {
+      width: 140px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .hero-proof-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
 
     /* ── COUNTDOWN ── */
     .cd-unit {
@@ -507,7 +531,7 @@
 
     /* ── AI SECTION ── */
     #ai-angle {
-      background: var(--dark2);
+      background: var(--dark);
       padding: 80px 24px;
     }
 
@@ -564,12 +588,13 @@
     }
 
     .ai-vs-left {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(200,60,60,0.06);
+      border: 1px solid rgba(200,60,60,0.15);
       border-radius: 10px;
       padding: 14px 18px;
       font-size: 14px;
-      color: #6b6a65;
+      color: #8a7a7a;
+      box-shadow: 0 0 20px rgba(200,60,60,0.06), inset 0 0 20px rgba(200,60,60,0.03);
     }
 
     @media(min-width: 600px) { .ai-vs-left { text-align: right; } }
@@ -585,20 +610,17 @@
     }
 
     .ai-vs-right {
-      background: rgba(217,119,87,0.06);
-      border: 1px solid rgba(217,119,87,0.12);
+      background: rgba(90,158,111,0.08);
+      border: 1px solid rgba(90,158,111,0.2);
       border-radius: 10px;
       padding: 14px 18px;
       font-size: 14px;
       color: var(--cream);
       font-weight: 500;
+      box-shadow: 0 0 20px rgba(90,158,111,0.08), inset 0 0 20px rgba(90,158,111,0.04);
     }
 
-    /* ── PROBLEM ── */
-    #problem {
-      background: var(--dark);
-      padding: 80px 24px;
-    }
+    /* ── PROBLEM ── (background set above) */
 
     #problem h2 {
       font-family: 'Poppins', sans-serif;
@@ -1031,9 +1053,259 @@
     footer p { font-size: 13px; color: #4a4946; }
     footer a { color: #6b6a65; text-decoration: none; }
 
+    /* ── PROBLEM (moved up) ── */
+    #problem {
+      background: var(--dark2);
+      padding: 80px 24px;
+    }
+
+    /* ── STATS BAR ── */
+    #stats-bar { background: var(--cream); padding: 48px 24px; border-bottom: 1px solid rgba(14,14,13,0.06); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media(min-width: 600px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .stat-card {
+      background: white;
+      border: 1px solid rgba(14,14,13,0.07);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--orange);
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── BEFORE & AFTER ── */
+    #before-after { background: var(--dark); padding: 80px 24px; }
+
+    #before-after h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      color: var(--cream);
+      margin-bottom: 48px;
+    }
+
+    #before-after h2 span { color: var(--orange); }
+
+    .ba-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ba-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    @media(min-width: 640px) { .ba-card { grid-template-columns: 1fr 1fr; } }
+
+    .ba-before, .ba-after {
+      padding: 20px 24px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .ba-before {
+      background: rgba(255,255,255,0.03);
+      color: #8a8880;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media(min-width: 640px) {
+      .ba-before { border-bottom: none; border-right: 1px solid rgba(255,255,255,0.05); }
+    }
+
+    .ba-after {
+      background: rgba(217,119,87,0.04);
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .ba-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .ba-before .ba-tag { color: #8a8880; background: rgba(255,255,255,0.05); }
+    .ba-after .ba-tag { color: var(--orange); background: var(--orange2); }
+
+    /* ── DAY AFTER ── */
+    #day-after { background: #f3f2ed; padding: 80px 24px; }
+
+    #day-after h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    #day-after h2 span { color: var(--orange); }
+
+    .day-after-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+
+    .day-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .day-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .day-step-num {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--orange);
+      opacity: 0.4;
+      flex-shrink: 0;
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .day-step-content { flex: 1; }
+
+    .day-step-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .day-step-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── SCREENSHOTS ── */
+    #screenshots { background: var(--dark); padding: 80px 24px; }
+
+    #screenshots h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .screenshots-sub {
+      font-size: 16px;
+      color: #8a8880;
+      margin-bottom: 48px;
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media(min-width: 640px) { .screenshots-grid { grid-template-columns: 1fr 1fr; } }
+
+    .screenshot-card {
+      background: var(--dark);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .screenshot-placeholder {
+      aspect-ratio: 16/9;
+      background: #111110;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #4a4946;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .screenshot-caption {
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #8a8880;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ── ABOUT EXPANDED ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    @media(min-width: 640px) { .about-grid { grid-template-columns: 280px 1fr; } }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: #1a1917;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #4a4946;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     /* ── PERFORMANCE ── */
     /* Defer rendering of below-fold sections */
-    #ai-angle, #problem, #outcome, #how, #pricing, #who, #about, #contact {
+    #ai-angle, #before-after, #problem, #outcome, #day-after, #screenshots, #how, #pricing, #who, #about, #contact {
       content-visibility: auto;
       contain-intrinsic-size: 0 500px;
     }
@@ -1063,11 +1335,25 @@
 
     <p class="hero-sub">An AI operating system that reads your live Shopify, Klaviyo, Meta Ads, and Google Ads data — and tells you what to do about it. We build it together in one afternoon. You own it forever.</p>
 
-    <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="hero-cta">Book a 15-Min Application Call</a>
-    <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Find out if this is right for you.</p>
-    <p style="margin-top:14px;">
-      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your spot here →</a>
-    </p>
+    <div style="display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap;">
+      <!-- CTA column -->
+      <div style="flex:1; min-width:280px;">
+        <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="hero-cta">Book a 15-Min Application Call</a>
+        <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Find out if this is right for you.</p>
+        <p style="margin-top:14px;">
+          <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your spot here →</a>
+        </p>
+      </div>
+      <!-- Workshop proof photos (hidden on mobile) -->
+      <div class="hero-proof-photos">
+        <div class="hero-proof-frame" style="transform:rotate(-3deg);">
+          <img src="images/10-web.jpg" width="400" height="300" alt="Chris hosting a live workshop" loading="lazy" />
+        </div>
+        <div class="hero-proof-frame" style="transform:rotate(2.5deg); margin-top:20px;">
+          <img src="images/11-web.jpg" width="400" height="300" alt="Hands-on workshop session with participants" loading="lazy" />
+        </div>
+      </div>
+    </div>
 
     <!-- COUNTDOWN -->
     <div id="hero-countdown" style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
@@ -1079,7 +1365,7 @@
 
     <!-- VSL VIDEO -->
     <div id="vsl-video" style="margin-top:48px; border-radius:16px; overflow:hidden; background:#111110; border:1px solid rgba(255,255,255,0.07); position:relative; padding-bottom:56.25%; height:0;">
-      <iframe src="https://www.youtube.com/embed/U2Kj8oSLhaM?rel=0&modestbranding=1&color=white" title="eCommerce Command Centre Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+      <iframe src="https://www.youtube.com/embed/U2Kj8oSLhaM?rel=0&modestbranding=1&color=white" title="eCommerce Command Centre Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
     </div>
 
     <!-- Chat UI -->
@@ -1127,6 +1413,27 @@
 </section>
 
 
+<!-- PROBLEM STATS -->
+<section id="problem">
+  <div class="inner">
+    <h2>eComm founders are drowning in data.<br><span>But starving for answers.</span></h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-stat">12+</div>
+        <div class="problem-label">platforms the average eComm brand uses. Only 31% have unified them into a single view.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-stat">47%</div>
+        <div class="problem-label">of ad spend wasted due to fragmented attribution. Meta says one thing. Shopify says another.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-stat">~45min</div>
+        <div class="problem-label">spent by most founders every morning checking dashboards — before they've made a single decision.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AI ANGLE -->
 <section id="ai-angle">
   <div class="inner">
@@ -1155,22 +1462,70 @@
   </div>
 </section>
 
-<!-- PROBLEM STATS -->
-<section id="problem">
+<!-- STATS BAR -->
+<section id="stats-bar">
   <div class="inner">
-    <h2>eComm founders are drowning in data.<br><span>But starving for answers.</span></h2>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="problem-stat">12+</div>
-        <div class="problem-label">platforms the average eComm brand uses. Only 31% have unified them into a single view.</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">A$995</div>
+        <div class="stat-label">One afternoon. Own it forever.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-stat">47%</div>
-        <div class="problem-label">of ad spend wasted due to fragmented attribution. Meta says one thing. Shopify says another.</div>
+      <div class="stat-card">
+        <div class="stat-number">Under $30/mo</div>
+        <div class="stat-label">Ongoing cost. No enterprise contracts.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-stat">~45min</div>
-        <div class="problem-label">spent by most founders every morning checking dashboards — before they've made a single decision.</div>
+      <div class="stat-card">
+        <div class="stat-number">6 commands</div>
+        <div class="stat-label">Everything you need to run your store smarter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER -->
+<section id="before-after">
+  <div class="inner">
+    <h2>Your morning before this workshop <span>vs after.</span></h2>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-before">
+          <span class="ba-tag">Before</span>
+          <p>45 minutes every morning checking Shopify, GA4, Klaviyo, and Meta Ads separately.</p>
+        </div>
+        <div class="ba-after">
+          <span class="ba-tag">After</span>
+          <p>One command. 30-second briefing with every platform cross-referenced.</p>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-before">
+          <span class="ba-tag">Before</span>
+          <p>Guessing which products to push based on gut feel.</p>
+        </div>
+        <div class="ba-after">
+          <span class="ba-tag">After</span>
+          <p>AI ranks products by real margin, velocity, and ad efficiency.</p>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-before">
+          <span class="ba-tag">Before</span>
+          <p>Downloading CSVs and building spreadsheets to compare channels.</p>
+        </div>
+        <div class="ba-after">
+          <span class="ba-tag">After</span>
+          <p>Ask a question in plain English. Get a cross-platform answer instantly.</p>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-before">
+          <span class="ba-tag">Before</span>
+          <p>Paying $500–2,000/month for dashboards that show you what happened.</p>
+        </div>
+        <div class="ba-after">
+          <span class="ba-tag">After</span>
+          <p>Own the system outright. Under $30/month ongoing.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1215,6 +1570,70 @@
           <strong>Ongoing cost: under $30 AUD/month</strong>
           <span>The system runs on Claude Pro. No enterprise contracts. No BI subscriptions. You own it outright.</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOUR DAY LOOKS LIKE AFTER -->
+<section id="day-after">
+  <div class="inner-sm">
+    <h2>What your day looks like <span>after.</span></h2>
+    <p class="day-after-sub">The workshop sets it up. This is what happens every morning from then on.</p>
+    <div class="day-steps">
+      <div class="day-step">
+        <div class="day-step-num">01</div>
+        <div class="day-step-content">
+          <div class="day-step-title">Open your workspace and ask a question</div>
+          <div class="day-step-desc">"What happened yesterday? Which products drove the most profit? Should I increase ad spend?" Plain English, no code.</div>
+        </div>
+      </div>
+      <div class="day-step">
+        <div class="day-step-num">02</div>
+        <div class="day-step-content">
+          <div class="day-step-title">AI pulls live data from Shopify, Klaviyo, and your ad platforms</div>
+          <div class="day-step-desc">Connected via API. No logging in, no exporting CSVs, no switching tabs.</div>
+        </div>
+      </div>
+      <div class="day-step">
+        <div class="day-step-num">03</div>
+        <div class="day-step-content">
+          <div class="day-step-title">Get a specific answer with a recommendation</div>
+          <div class="day-step-desc">Not just numbers. AI cross-references your margins, goals, and ad performance to tell you what to DO.</div>
+        </div>
+      </div>
+      <div class="day-step">
+        <div class="day-step-num">04</div>
+        <div class="day-step-content">
+          <div class="day-step-title">Run it again tomorrow in 30 seconds</div>
+          <div class="day-step-desc">The same command, updated data. Your morning briefing becomes a habit, not a project.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section id="screenshots">
+  <div class="inner">
+    <h2>This is what it looks like.</h2>
+    <p class="screenshots-sub">No terminal. No code. Just a conversation with your business.</p>
+    <div class="screenshots-grid">
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">Screenshot coming soon</div>
+        <div class="screenshot-caption">Your workspace after setup. Business Brain loaded, platforms connected.</div>
+      </div>
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">Screenshot coming soon</div>
+        <div class="screenshot-caption">Running /prime — your morning briefing with live Shopify and ad data.</div>
+      </div>
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">Screenshot coming soon</div>
+        <div class="screenshot-caption">Asking a question and getting a cross-platform answer in seconds.</div>
+      </div>
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">Screenshot coming soon</div>
+        <div class="screenshot-caption">Using /brainstorm to pressure-test a new product idea against real data.</div>
       </div>
     </div>
   </div>
@@ -1337,9 +1756,25 @@
 <section id="about">
   <div class="inner-sm">
     <h2>Who's running this.</h2>
-    <p>I'm <strong>Chris Gulotta</strong>, founder of NxtLayr AI. 15 years in sales and tech — from enterprise SaaS to building AI systems for Australian businesses. I now help founders find where AI actually fits in their operations and build the systems to make it work.</p>
-    <p>I built this exact system for my own business first. Every morning I open one workspace, ask a question, and get a briefing that pulls from every platform I run. No dashboards. No spreadsheets. Just answers.</p>
-    <p>I've kept this small deliberately. <strong>10 people maximum.</strong> Everyone leaves with a working system built on their own data — not a slide deck full of theory.</p>
+    <div class="about-grid">
+      <div class="about-photo"><img src="images/chris-headshot-web.jpg" width="600" height="750" alt="Chris Gulotta, founder of NxtLayr AI" loading="lazy" style="display:none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" /><span>Photo coming soon</span></div>
+      <div>
+        <p>Chris Gulotta has spent 10+ years in sales and business growth — from enterprise deals to building AI systems for Australian businesses. He's not a developer. He's a founder who figured out how to make AI actually useful for business owners, and now teaches others to do the same.</p>
+        <p>This isn't a webinar run by a faceless team. Chris walks you through every step, answers your questions live, and makes sure you leave with a working system — not just slides.</p>
+        <p>I built this exact system for my own business first. Every morning I open one workspace, ask a question, and get a briefing that pulls from every platform I run. No dashboards. No spreadsheets. Just answers.</p>
+        <p><strong>10 people maximum.</strong> Everyone leaves with a working system built on their own data — not a slide deck full of theory.</p>
+
+        <!-- Workshop presentation photos -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:28px;">
+          <div style="aspect-ratio:16/10; background:#111110; border-radius:10px; border:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:center; font-size:12px; color:#4a4946; overflow:hidden;">
+            <img src="images/10-web.jpg" alt="Chris presenting at a workshop" loading="lazy" width="400" height="300" style="width:100%; height:100%; object-fit:cover; display:none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none'" /><span>Presentation photo 1</span>
+          </div>
+          <div style="aspect-ratio:16/10; background:#111110; border-radius:10px; border:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:center; font-size:12px; color:#4a4946; overflow:hidden;">
+            <img src="images/11-web.jpg" alt="Chris facilitating a hands-on workshop session" loading="lazy" width="400" height="300" style="width:100%; height:100%; object-fit:cover; display:none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none'" /><span>Presentation photo 2</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1429,6 +1864,66 @@
         </div>
       </div>
 
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">Do I need to know how to code?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">No. The workspace runs on Claude Code, but you interact with it in plain English — or by voice. If you can describe what you want to know about your business, it can answer. We handle all the technical setup in the session.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What's the difference between this and ChatGPT / Claude.ai?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">ChatGPT and Claude.ai are chatbots. You paste data in, get an answer, copy it somewhere else. The eCommerce Command Centre is <strong>connected directly to your Shopify, Klaviyo, and ad platforms via API</strong>. It reads live data, knows your business context, and gives answers specific to YOUR store — not generic advice.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What do I need to bring?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">A laptop with your Shopify admin access, Klaviyo login, and Meta/Google Ads access. We'll handle the rest during the session. A Claude Pro subscription ($30 AUD/month) is required — we can help you set that up on the day if needed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">How long does setup take after the workshop?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">You leave with a working system. Shopify and Klaviyo are connected live during the session. Meta Ads and Google Ads come with step-by-step guides you can follow in 10–15 minutes each. Most people are fully operational within a day of the workshop.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">Can my team use it too?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">Yes. The workshop includes team member documentation and a <strong>/add-team-member</strong> command. You can onboard staff to the same workspace so everyone's working from the same data and context.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q">What if I get stuck after the workshop?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a">You get 2 weeks of post-session support via Slack or email. Plus, one of the best things about this system is that you can ask the AI itself for help — it knows your entire setup and can troubleshoot most issues.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1507,7 +2002,7 @@
         fbq('track', 'Lead', { content_name: 'Workshop Inquiry' });
         form.style.display = 'none';
         document.getElementById('thankyou').style.display = 'block';
-        window.scrollTo({ top: document.getElementById('waitlist').offsetTop - 60, behavior: 'smooth' });
+        window.scrollTo({ top: document.getElementById('contact').offsetTop - 60, behavior: 'smooth' });
       } else {
         btn.textContent = 'Something went wrong — try again';
         btn.disabled = false;
