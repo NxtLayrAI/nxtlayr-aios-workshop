@@ -702,6 +702,28 @@
     .outcome-text strong { display: block; font-weight: 600; font-size: 15px; margin-bottom: 3px; }
     .outcome-text span   { font-size: 14px; color: var(--muted); line-height: 1.55; }
 
+    .outcome-photos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    @media(min-width: 560px) { .outcome-photos { grid-template-columns: 1fr 1fr; gap: 20px; } }
+
+    .outcome-photo-frame {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid rgba(14,14,13,0.08);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    }
+
+    .outcome-photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* ── HOW ── */
     #how { background: var(--dark2); padding: 80px 24px; }
 
@@ -1335,25 +1357,11 @@
 
     <p class="hero-sub">An AI operating system that reads your live Shopify, Klaviyo, Meta Ads, and Google Ads data — and tells you what to do about it. We build it together in one afternoon. You own it forever.</p>
 
-    <div style="display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap;">
-      <!-- CTA column -->
-      <div style="flex:1; min-width:280px;">
-        <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="hero-cta">Book a 15-Min Application Call</a>
-        <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Find out if this is right for you.</p>
-        <p style="margin-top:14px;">
-          <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your spot here →</a>
-        </p>
-      </div>
-      <!-- Workshop proof photos (hidden on mobile) -->
-      <div class="hero-proof-photos">
-        <div class="hero-proof-frame" style="transform:rotate(-3deg);">
-          <img src="images/10-web.jpg" width="400" height="300" alt="Chris hosting a live workshop" loading="lazy" />
-        </div>
-        <div class="hero-proof-frame" style="transform:rotate(2.5deg); margin-top:20px;">
-          <img src="images/11-web.jpg" width="400" height="300" alt="Hands-on workshop session with participants" loading="lazy" />
-        </div>
-      </div>
-    </div>
+    <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="hero-cta">Book a 15-Min Application Call</a>
+    <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Find out if this is right for you.</p>
+    <p style="margin-top:14px;">
+      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your spot here →</a>
+    </p>
 
     <!-- COUNTDOWN -->
     <div id="hero-countdown" style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
@@ -1570,6 +1578,16 @@
           <strong>Ongoing cost: under $30 AUD/month</strong>
           <span>The system runs on Claude Pro. No enterprise contracts. No BI subscriptions. You own it outright.</span>
         </div>
+      </div>
+    </div>
+
+    <!-- Workshop proof photos -->
+    <div class="outcome-photos">
+      <div class="outcome-photo-frame" style="transform:rotate(-2deg);">
+        <img src="images/10-web.jpg" width="400" height="300" alt="Chris hosting a live workshop" loading="lazy" />
+      </div>
+      <div class="outcome-photo-frame" style="transform:rotate(1.5deg);">
+        <img src="images/11-web.jpg" width="400" height="300" alt="Hands-on workshop session with participants" loading="lazy" />
       </div>
     </div>
   </div>
