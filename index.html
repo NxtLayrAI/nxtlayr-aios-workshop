@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eCommerce Command Centre Workshop | NxtLayr AI</title>
-  <meta name="description" content="Connect Shopify, Klaviyo, Meta Ads and Google Ads to one AI brain. Thursday April 23, Sydney. A$995 per person — 10 founding spots." />
+  <meta name="description" content="Connect Shopify, Klaviyo, Meta Ads and Google Ads to one AI brain. In-person Sydney (Thursday April 23) or virtual online session. A$995 per person — 10 founding spots." />
   <meta property="og:title" content="eCommerce Command Centre Workshop — April 23, Sydney | NxtLayr AI" />
-  <meta property="og:description" content="Connect Shopify, Klaviyo, Meta Ads and Google Ads to one AI brain. Thursday April 23, Sydney. A$995 per person." />
+  <meta property="og:description" content="Connect Shopify, Klaviyo, Meta Ads and Google Ads to one AI brain. In-person Sydney (Thursday April 23) or virtual online session. A$995 per person." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://workshop.nxtlayrai.com" />
   <link rel="canonical" href="https://workshop.nxtlayrai.com" />
@@ -192,7 +192,7 @@
 
     .hero-sub {
       font-size: 17px;
-      color: #8a8880;
+      color: var(--cream);
       max-width: 540px;
       margin-bottom: 36px;
       line-height: 1.7;
@@ -253,6 +253,55 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: #5a5850;
+    }
+    .cd-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.75;
+    }
+    .virtual-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 8px 14px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: #c8f7d6;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.35), 0 0 28px rgba(34, 197, 94, 0.2);
+      animation: virtualPulse 2.4s ease-in-out infinite;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .virtual-pill:hover {
+      background: rgba(34, 197, 94, 0.22);
+      transform: translateY(-1px);
+    }
+    .virtual-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+      animation: virtualDotPulse 1.6s ease-in-out infinite;
+    }
+    @keyframes virtualPulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(34,197,94,0.3), 0 0 24px rgba(34,197,94,0.15); }
+      50% { box-shadow: 0 0 18px rgba(34,197,94,0.55), 0 0 36px rgba(34,197,94,0.3); }
+    }
+    @keyframes virtualDotPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.25); }
     }
 
     /* ── SPOTS REMAINING ── */
@@ -559,7 +608,7 @@
 
     #ai-angle p {
       font-size: 17px;
-      color: #8a8880;
+      color: var(--cream);
       line-height: 1.7;
       margin-bottom: 20px;
       max-width: 600px;
@@ -593,7 +642,7 @@
       border-radius: 10px;
       padding: 14px 18px;
       font-size: 14px;
-      color: #8a7a7a;
+      color: var(--cream);
       box-shadow: 0 0 20px rgba(200,60,60,0.06), inset 0 0 20px rgba(200,60,60,0.03);
     }
 
@@ -661,7 +710,7 @@
 
     .problem-label {
       font-size: 14px;
-      color: #8a8880;
+      color: var(--cream);
       line-height: 1.6;
     }
 
@@ -802,12 +851,33 @@
     .pricing-card {
       background: var(--dark);
       border-radius: 16px;
-      padding: 28px 20px;
+      padding: 22px 18px;
       position: relative;
       overflow: hidden;
     }
 
-    @media(min-width: 480px) { .pricing-card { padding: 36px 32px; } }
+    @media(min-width: 480px) { .pricing-card { padding: 28px 26px; } }
+
+    /* Virtual variant — orange-tinted dark card */
+    .pricing-card.virtual {
+      background:
+        linear-gradient(165deg, rgba(217,119,87,0.14) 0%, rgba(217,119,87,0.04) 100%),
+        var(--dark);
+      border: 1px solid rgba(217,119,87,0.5);
+      box-shadow: 0 0 0 1px rgba(217,119,87,0.08), 0 10px 40px -10px rgba(217,119,87,0.25);
+    }
+    .pricing-card.virtual::before {
+      background: radial-gradient(circle, rgba(217,119,87,0.22) 0%, transparent 70%);
+    }
+    .pricing-card.virtual .pricing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pricing-card.virtual .pricing-badge svg {
+      width: 14px; height: 14px;
+      stroke: var(--orange);
+    }
 
     .pricing-card::before {
       content: '';
@@ -843,23 +913,23 @@
 
     .price-new {
       font-family: 'Poppins', sans-serif;
-      font-weight: 700; font-size: 52px;
+      font-weight: 700; font-size: 42px;
       color: var(--cream);
       letter-spacing: -1.5px; line-height: 1;
     }
 
-    .price-note { font-size: 13px; color: var(--cream); margin-bottom: 28px; }
+    .price-note { font-size: 12px; color: var(--cream); margin-bottom: 20px; }
 
     .pricing-includes {
       list-style: none;
-      display: flex; flex-direction: column; gap: 10px;
-      margin-bottom: 32px;
+      display: flex; flex-direction: column; gap: 8px;
+      margin-bottom: 24px;
       border-top: 1px solid rgba(250,249,245,0.06);
-      padding-top: 24px;
+      padding-top: 18px;
     }
 
     .pricing-includes li {
-      font-size: 14px; color: var(--cream);
+      font-size: 13.5px; color: var(--cream);
       display: flex; align-items: flex-start; gap: 10px;
       line-height: 1.5;
     }
@@ -1338,14 +1408,14 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-brand"><img src="logo.png" alt="NxtLayr AI" style="height:44px;width:auto;display:block;" /></a>
-  <div class="nav-pill">Thursday April 23 · Sydney · 10 Spots</div>
+  <div class="nav-pill">Thursday April 23 · Sydney or Virtual · 10 Spots</div>
   <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="nav-cta">Book a 15-Min Call</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="inner" style="position:relative; z-index:1;">
-    <span class="hero-eyebrow">Thursday April 23 · Sydney · 10 Spots Only</span>
+    <span class="hero-eyebrow">Thursday April 23 · Sydney or Virtual · 10 Spots Only</span>
 
     <h1>What if you could<br><span class="accent">talk to your business</span><br>in plain English?</h1>
 
@@ -1364,11 +1434,15 @@
     </p>
 
     <!-- COUNTDOWN -->
-    <div id="hero-countdown" style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">days</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">hours</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">mins</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">secs</span></div>
+    <div style="margin-top:24px;">
+      <div class="cd-title">Sydney Workshop</div>
+      <div id="hero-countdown" style="margin-top:10px; display:flex; gap:16px; flex-wrap:wrap;">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">mins</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">secs</span></div>
+      </div>
+      <a href="#pricing-virtual" class="virtual-pill"><span class="virtual-pill-dot"></span>Now Accepting Virtual Workshops</a>
     </div>
 
     <!-- VSL VIDEO -->
@@ -1702,9 +1776,9 @@
 <section id="pricing">
   <div class="inner-sm">
     <h2>Founding member <span>pricing.</span></h2>
-    <p class="pricing-sub">Thursday April 23, Sydney. First cohort — this price won't repeat.</p>
+    <p class="pricing-sub">Join us in Sydney on Thursday April 23, or attend virtually on a date that suits you. Same workspace, same outcome, same founding price — this price won't repeat.</p>
     <div class="pricing-card">
-      <div class="pricing-badge">Thursday April 23 · Sydney · Founding Cohort</div>
+      <div class="pricing-badge">In-Person · Thursday April 23 · Sydney</div>
       <div class="pricing-price">
         <div class="price-old">A$1,997</div>
         <div class="price-new">A$995</div>
@@ -1714,7 +1788,7 @@
       <!-- SPOTS REMAINING -->
       <div class="spots-bar" id="spots-widget">
         <div class="spots-dots" id="spots-dots"></div>
-        <div class="spots-text"><span id="spots-count">8</span> of 10 spots remaining</div>
+        <div class="spots-text"><span id="spots-count">7</span> of 10 spots remaining</div>
       </div>
 
       <ul class="pricing-includes">
@@ -1737,6 +1811,37 @@
         <p style="font-family:'Poppins',sans-serif; font-size:14px; line-height:1.5; color:var(--cream); margin:0;"><span style="color:var(--orange); font-weight:700;">100% money-back guarantee.</span> If we can't get your Command Centre up and running by the end of the session, you get a full refund. No forms, no back-and-forth.</p>
       </div>
       <p class="pricing-guarantee">Booking for multiple team members? Each person gets their own workspace built to their role. <a href="#contact" style="color:var(--orange); text-decoration:underline;">Get in touch</a> for group pricing.</p>
+    </div>
+
+    <!-- VIRTUAL / ONLINE CARD -->
+    <div id="pricing-virtual" class="pricing-card virtual" style="margin-top:24px; scroll-margin-top:80px;">
+      <div class="pricing-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>Virtual · Online Session · Scheduled to Suit You</div>
+      <div class="pricing-price">
+        <div class="price-old">A$1,997</div>
+        <div class="price-new">A$995</div>
+      </div>
+      <div class="price-note">per person · one-time · own it forever · interstate + remote welcome</div>
+
+      <ul class="pricing-includes">
+        <li><span class="highlight">Focused 3-hour live session — on Zoom, screen-share guided</span></li>
+        <li><span class="highlight">Scheduled at a time that suits you</span> — we lock in a date once you're in</li>
+        <li>Full AI workspace setup — Brain, data connections, commands</li>
+        <li>Bespoke foundational documents built to your business</li>
+        <li>Shopify + Klaviyo connected via API — live during the session</li>
+        <li>Integration guides for Meta Ads, Google Ads + Triple Whale included</li>
+        <li>Starter prompt library tailored to eCommerce</li>
+        <li>2 weeks post-session support via Slack or email</li>
+        <li><span class="highlight">Session recording so your team can rewatch</span></li>
+        <li>Ongoing system cost: <span class="highlight">under A$30/month</span> (Claude Pro only)</li>
+      </ul>
+      <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="pricing-cta">Book a 15-Min Application Call</a>
+      <p style="text-align:center; margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Ideal for interstate founders — we'll schedule your session on the call.</p>
+      <p style="text-align:center; margin-top:16px;">
+        <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Reserve your virtual spot here →</a>
+      </p>
+      <div style="margin-top:24px; padding:14px 18px; background:var(--orange2); border:1px solid rgba(217,119,87,0.25); border-radius:10px; text-align:center;">
+        <p style="font-family:'Poppins',sans-serif; font-size:14px; line-height:1.5; color:var(--cream); margin:0;"><span style="color:var(--orange); font-weight:700;">100% money-back guarantee.</span> If we can't get your Command Centre up and running by the end of the session, you get a full refund. No forms, no back-and-forth.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1780,7 +1885,7 @@
         <p>Chris Gulotta has spent 10+ years in sales and business growth — from enterprise deals to building AI systems for Australian businesses. He's not a developer. He's a founder who figured out how to make AI actually useful for business owners, and now teaches others to do the same.</p>
         <p>This isn't a webinar run by a faceless team. Chris walks you through every step, answers your questions live, and makes sure you leave with a working system — not just slides.</p>
         <p>I built this exact system for my own business first. Every morning I open one workspace, ask a question, and get a briefing that pulls from every platform I run. No dashboards. No spreadsheets. Just answers.</p>
-        <p><strong>10 people maximum.</strong> Everyone leaves with a working system built on their own data — not a slide deck full of theory.</p>
+        <p>Everyone leaves with a working system built on their own data — not a slide deck full of theory.</p>
 
       </div>
     </div>
@@ -1849,7 +1954,7 @@
           <span class="faq-icon"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></span>
         </button>
         <div class="faq-body">
-          <p class="faq-a">The April 23 session is <strong>in-person in Sydney</strong>. Can't make it? <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" style="color:var(--orange); text-decoration:underline;">Book a call</a> and we'll discuss virtual or future dates.</p>
+          <p class="faq-a">Two ways in. <strong>In-person in Sydney on Thursday April 23</strong>, or <strong>virtual via Zoom on a date that suits you</strong> — same workspace, same outcome, same founding price. Virtual is popular with interstate founders. <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" style="color:var(--orange); text-decoration:underline;">Book a call</a> and we'll lock in your session.</p>
         </div>
       </div>
 
@@ -1942,7 +2047,7 @@
   <div class="inner-sm">
     <div style="text-align:center; margin-bottom:48px;">
       <h2 style="margin-bottom:12px;">Ready to <span>build yours?</span></h2>
-      <p class="form-sub" style="margin-bottom:24px;">Thursday April 23, Sydney. 10 founding spots at A$995.</p>
+      <p class="form-sub" style="margin-bottom:24px;">Thursday April 23 in Sydney, or virtual on a date that suits you. 10 founding spots at A$995.</p>
       <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="pricing-cta" style="display:inline-block; max-width:420px; width:100%;">Book a 15-Min Application Call</a>
       <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Find out if this is right for you.</p>
       <p style="margin-top:14px;">
@@ -2062,7 +2167,7 @@
 
   // ── SPOTS REMAINING ──
   // Change this number as spots sell. 8 = all available, 0 = sold out.
-  const SPOTS_REMAINING = 8;
+  const SPOTS_REMAINING = 7;
   const TOTAL_SPOTS = 10;
 
   function renderSpots() {
