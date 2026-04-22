@@ -1430,8 +1430,11 @@
 
     <p class="hero-sub">An eCommerce AI Operating System that reads your live Shopify, Klaviyo, Meta Ads, and Google Ads data — and tells you what to do about it. We build it with you in a single 3-hour private session. You own it forever.</p>
 
-    <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="hero-cta">Book a 15-Min Discovery Call</a>
-    <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Limited build slots each month. We'll see if it's a fit.</p>
+    <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="hero-cta">Book a Free 15-Min Discovery Call</a>
+    <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Or <a href="#contact" style="color:var(--orange); text-decoration:underline;">send an inquiry</a> and I'll call you. Limited build slots each month.</p>
+    <p style="margin-top:14px;">
+      <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your build session →</a>
+    </p>
 
     <div style="margin-top:24px;">
       <a href="#pricing" class="virtual-pill"><span class="virtual-pill-dot"></span>Now Accepting Virtual Build Sessions</a>
@@ -1790,8 +1793,11 @@
         <li>Team member documentation + /add-team-member command</li>
         <li>Ongoing system cost: <span class="highlight">under A$30/month</span> (Claude Pro only)</li>
       </ul>
-      <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="pricing-cta">Book a 15-Min Discovery Call</a>
+      <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="pricing-cta">Book a Free 15-Min Discovery Call</a>
       <p style="text-align:center; margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Or <a href="#contact" style="color:var(--orange); text-decoration:underline;">send an inquiry</a> and I'll call you.</p>
+      <p style="text-align:center; margin-top:16px;">
+        <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your build session →</a>
+      </p>
       <div style="margin-top:24px; padding:14px 18px; background:var(--orange2); border:1px solid rgba(217,119,87,0.25); border-radius:10px; text-align:center;">
         <p style="font-family:'Poppins',sans-serif; font-size:14px; line-height:1.5; color:var(--cream); margin:0;"><span style="color:var(--orange); font-weight:700;">100% money-back guarantee.</span> If we can't get your AI Operating System up and running by the end of the session, you get a full refund. No forms, no back-and-forth.</p>
       </div>
@@ -1982,8 +1988,11 @@
     <div style="text-align:center; margin-bottom:48px;">
       <h2 style="margin-bottom:12px;">Ready to <span>build yours?</span></h2>
       <p class="form-sub" style="margin-bottom:24px;">One 3-hour private build session with Chris. Virtual or in-person Sydney, scheduled around you. Limited build slots each month.</p>
-      <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="pricing-cta" style="display:inline-block; max-width:420px; width:100%;">Book a 15-Min Discovery Call</a>
+      <a href="https://cal.com/chrisgulotta-nxtlayr.ai/ai-consultation-next-steps" target="_top" class="pricing-cta" style="display:inline-block; max-width:420px; width:100%;">Book a Free 15-Min Discovery Call</a>
       <p style="margin-top:10px; font-family:'Poppins',sans-serif; font-size:14px; color:var(--muted);">Or drop your details below and I'll call you.</p>
+      <p style="margin-top:14px;">
+        <a href="https://buy.stripe.com/00w4gzei6183ehA0qPcQU02" target="_top" style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--orange); text-decoration:none; border-bottom:1px solid rgba(217,119,87,0.3); padding-bottom:2px;">Already decided? Skip the call and reserve your build session →</a>
+      </p>
     </div>
 
     <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:48px;">
@@ -2066,6 +2075,15 @@
     if (!isOpen) item.classList.add('open');
   }
 
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      fbq('track', 'Purchase', {
+        value: 1995.00,
+        currency: 'AUD',
+        content_name: 'eCommerce AI Operating System — Build Session'
+      });
+    });
+  });
 </script>
 
 </body>
